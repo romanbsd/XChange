@@ -7,7 +7,7 @@ import info.bitrich.xchangestream.krakenfutures.dto.KrakenFuturesStreamingOrderB
 import info.bitrich.xchangestream.krakenfutures.dto.KrakenFuturesStreamingTickerResponse;
 import info.bitrich.xchangestream.krakenfutures.dto.KrakenFuturesStreamingTradeResponse;
 import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Observable;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.marketdata.*;
 import org.knowm.xchange.dto.trade.LimitOrder;

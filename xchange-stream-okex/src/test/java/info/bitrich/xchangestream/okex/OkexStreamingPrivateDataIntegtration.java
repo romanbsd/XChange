@@ -14,7 +14,7 @@ import org.knowm.xchange.okex.OkexExchange;
 
 import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 @Ignore
 public class OkexStreamingPrivateDataIntegtration {

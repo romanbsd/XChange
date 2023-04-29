@@ -5,8 +5,8 @@ import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingTradeService;
 import info.bitrich.xchangestream.service.netty.NettyStreamingService;
 import info.bitrich.xchangestream.util.Events;
-import io.reactivex.Completable;
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Observable;
 import org.knowm.xchange.kucoin.KucoinExchange;
 import org.knowm.xchange.kucoin.dto.response.WebsocketResponse;
 

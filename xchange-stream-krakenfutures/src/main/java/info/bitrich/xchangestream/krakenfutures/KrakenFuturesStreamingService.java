@@ -7,7 +7,7 @@ import info.bitrich.xchangestream.krakenfutures.dto.KrakenFuturesStreamingChalle
 import info.bitrich.xchangestream.krakenfutures.dto.KrakenFuturesStreamingWebsocketMessage;
 import info.bitrich.xchangestream.service.netty.JsonNettyStreamingService;
 import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;
-import io.reactivex.Completable;
+import io.reactivex.rxjava3.core.Completable;
 import org.apache.commons.lang3.NotImplementedException;
 import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.krakenfutures.service.KrakenFuturesDigest;

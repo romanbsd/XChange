@@ -3,7 +3,7 @@ package info.bitrich.xchangestream.krakenfutures;
 import info.bitrich.xchangestream.core.ProductSubscription;
 import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.disposables.Disposable;
 import org.junit.Before;
 import org.junit.Test;
 import org.knowm.xchange.derivative.FuturesContract;
@@ -47,7 +47,7 @@ public class KrakenFuturesStreamingPublicDataTest {
                     return ticker;
                 })
                 .test()
-                .assertSubscribed()
+                .assertNoErrors()
                 .awaitCount(1)
                 .assertValue(ticker -> ticker.getInstrument().equals(instrument))
                 .dispose();
@@ -62,7 +62,7 @@ public class KrakenFuturesStreamingPublicDataTest {
                     return fundingRate;
                 })
                 .test()
-                .assertSubscribed()
+                .assertNoErrors()
                 .awaitCount(1)
                 .assertValue(fundingRate -> fundingRate.getFundingRateEffectiveInMinutes() < 61 && fundingRate.getFundingRate1h() != null)
                 .dispose();
