@@ -230,7 +230,7 @@ public class BTCMarketsTradeServiceTest extends BTCMarketsServiceTest {
             eq(SPECIFICATION_API_KEY),
             Mockito.any(SynchronizedValueFactory.class),
             Mockito.any(BTCMarketsDigest.class),
-            eq(btcMarketsOrderDetailsRequest)))
+            Mockito.eq(btcMarketsOrderDetailsRequest)))
         .thenReturn(btcMarketsOrders);
     // when
     Collection<Order> orders = btcMarketsTradeService.getOrder("1000");

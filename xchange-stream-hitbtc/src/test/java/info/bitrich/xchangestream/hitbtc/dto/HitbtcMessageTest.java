@@ -1,8 +1,8 @@
 package info.bitrich.xchangestream.hitbtc.dto;
 
 import static com.jayway.jsonpath.matchers.JsonPathMatchers.hasJsonPath;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.AllOf.allOf;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;

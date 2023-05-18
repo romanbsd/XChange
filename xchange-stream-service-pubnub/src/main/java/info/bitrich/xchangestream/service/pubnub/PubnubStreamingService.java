@@ -3,18 +3,18 @@ package info.bitrich.xchangestream.service.pubnub;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pubnub.api.PNConfiguration;
-import com.pubnub.api.PubNub;
-import com.pubnub.api.callbacks.SubscribeCallback;
+import com.pubnub.api.PubNubException;
+import com.pubnub.api.UserId;
 import com.pubnub.api.enums.PNStatusCategory;
+import com.pubnub.api.java.PubNub;
+import com.pubnub.api.java.callbacks.SubscribeCallback;
+import com.pubnub.api.java.v2.PNConfiguration;
 import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 import com.pubnub.api.models.consumer.pubsub.PNSignalResult;
 import com.pubnub.api.models.consumer.pubsub.message_actions.PNMessageActionResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;
+import com.pubnub.api.java.models.consumer.objects_api.membership.PNMembershipResult;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
@@ -37,9 +37,13 @@ public class PubnubStreamingService {
   public PubnubStreamingService(String publicKey) {
     mapper = new ObjectMapper();
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    PNConfiguration pnConfiguration = new PNConfiguration();
-    pnConfiguration.setSubscribeKey(publicKey);
-    pubnub = new PubNub(pnConfiguration);
+    try {
+      PNConfiguration pnConfiguration =
+          PNConfiguration.builder(new UserId("xchange"), publicKey).build();
+      pubnub = PubNub.create(pnConfiguration);
+    } catch (PubNubException e) {
+      throw new IllegalArgumentException("Unable to create PubNub client", e);
+    }
     pnStatusCategory = PNStatusCategory.PNDisconnectedCategory;
   }
 
@@ -51,10 +55,7 @@ public class PubnubStreamingService {
                 @Override
                 public void status(PubNub pubNub, PNStatus pnStatus) {
                   pnStatusCategory = pnStatus.getCategory();
-                  LOG.debug(
-                      "PubNub status: {} {}",
-                      pnStatusCategory.toString(),
-                      pnStatus.getStatusCode());
+                  LOG.debug("PubNub status: {}", pnStatusCategory.toString());
                   if (pnStatusCategory == PNStatusCategory.PNConnectedCategory) {
                     //              e.onComplete();
                   } else if (pnStatus.isError()) {
@@ -88,16 +89,6 @@ public class PubnubStreamingService {
                 @Override
                 public void signal(PubNub pubnub, PNSignalResult pnSignalResult) {
                   LOG.debug("PubNub signal: {}", pnSignalResult.toString());
-                }
-
-                @Override
-                public void user(PubNub pubnub, PNUserResult pnUserResult) {
-                  LOG.debug("PubNub user: {}", pnUserResult.toString());
-                }
-
-                @Override
-                public void space(PubNub pubnub, PNSpaceResult pnSpaceResult) {
-                  LOG.debug("PubNub space: {}", pnSpaceResult.toString());
                 }
 
                 @Override
