@@ -2,8 +2,6 @@ package org.knowm.xchange.bleutrade;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
@@ -27,6 +25,7 @@ import org.knowm.xchange.dto.meta.CurrencyMetaData;
 import org.knowm.xchange.dto.meta.InstrumentMetaData;
 import org.knowm.xchange.instrument.Instrument;
 import org.knowm.xchange.utils.nonce.AtomicLongIncrementalTime2013NonceFactory;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import si.mazi.rescu.ClientConfig;
 import si.mazi.rescu.IRestProxyFactory;
@@ -150,7 +149,7 @@ public class BleutradeExchangeIntegration extends BleutradeServiceTestSupport {
 
     IRestProxyFactory restProxyFactory = mock(IRestProxyFactory.class);
     when(restProxyFactory.createProxy(
-            eq(BleutradeAuthenticated.class), any(String.class), any(ClientConfig.class)))
+            Mockito.eq(BleutradeAuthenticated.class), Mockito.any(String.class), Mockito.any(ClientConfig.class)))
         .thenReturn(bleutrade);
 
     BleutradeExchange mockExchange = new BleutradeExchange(restProxyFactory);

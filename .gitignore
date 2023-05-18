@@ -49,3 +49,5 @@ GTAGS
 GRTAGS
 GPATH
 GSYMS
+.gradle
+build
