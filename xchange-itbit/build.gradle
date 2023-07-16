@@ -8,7 +8,6 @@ plugins {
 
 dependencies {
     api project(':xchange-core')
-    api 'com.google.guava:guava:31.1-jre'
 }
 
 description = 'XChange ItBit'

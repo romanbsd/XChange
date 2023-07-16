@@ -10,8 +10,6 @@ dependencies {
     api project(':xchange-stream-core')
     api project(':xchange-stream-service-netty')
     api project(':xchange-coincheck')
-    testImplementation 'org.mockito:mockito-core:3.12.4'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'XChange Coincheck Stream'

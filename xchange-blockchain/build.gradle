@@ -9,7 +9,6 @@ plugins {
 dependencies {
     api project(':xchange-core')
     testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'XChange Blockchain'

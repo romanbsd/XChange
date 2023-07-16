@@ -10,8 +10,6 @@ dependencies {
     api project(':xchange-stream-core')
     api project(':xchange-stream-service-netty')
     api project(':xchange-kucoin')
-    api 'com.google.guava:guava:31.1-jre'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'XChange Kucoin Stream'

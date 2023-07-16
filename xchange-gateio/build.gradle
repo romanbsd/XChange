@@ -8,6 +8,7 @@ plugins {
 
 dependencies {
     api project(':xchange-core')
+    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
 }
 
 description = 'XChange Gate.io'

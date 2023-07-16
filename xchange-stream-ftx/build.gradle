@@ -9,7 +9,6 @@ plugins {
 dependencies {
     api project(':xchange-ftx')
     api project(':xchange-stream-core')
-    testImplementation 'org.mockito:mockito-core:3.12.4'
 }
 
 description = 'XChange Ftx Stream'

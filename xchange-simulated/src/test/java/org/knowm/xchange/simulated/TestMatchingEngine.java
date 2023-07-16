@@ -16,8 +16,8 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 
 import java.math.BigDecimal;
@@ -131,7 +131,7 @@ public class TestMatchingEngine {
     // Then
     assertThat(result.getId()).isNotNull();
     assertThat(result.getStatus()).isEqualTo(NEW);
-    verifyZeroInteractions(onFill);
+    verifyNoInteractions(onFill);
     verify(account, never()).fill(any(UserTrade.class), any(Boolean.class));
     verify(account, times(1)).reserve(any(LimitOrder.class));
     verify(account, never()).release(any(LimitOrder.class));
@@ -155,7 +155,7 @@ public class TestMatchingEngine {
     // Then
     assertThat(result.getId()).isNotNull();
     assertThat(result.getStatus()).isEqualTo(NEW);
-    verifyZeroInteractions(onFill);
+    verifyNoInteractions(onFill);
     verify(account, never()).fill(any(UserTrade.class), any(Boolean.class));
     verify(account, times(1)).reserve(any(LimitOrder.class));
     verify(account, never()).release(any(LimitOrder.class));

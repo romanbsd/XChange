@@ -10,8 +10,6 @@ dependencies {
     api project(':xchange-kraken')
     api project(':xchange-stream-core')
     api 'commons-beanutils:commons-beanutils:1.9.4'
-    api 'com.google.guava:guava:31.1-jre'
-    testImplementation 'org.mockito:mockito-core:3.12.4'
 }
 
 description = 'XChange Kraken Stream'

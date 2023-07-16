@@ -9,7 +9,6 @@ plugins {
 dependencies {
     api project(':xchange-krakenfutures')
     api project(':xchange-stream-core')
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'xchange-stream-krakenfutures'

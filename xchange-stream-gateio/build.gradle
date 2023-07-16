@@ -9,7 +9,6 @@ plugins {
 dependencies {
     api project(':xchange-stream-core')
     api project(':xchange-gateio')
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'XChange Gate.io Stream'

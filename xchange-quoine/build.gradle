@@ -9,7 +9,6 @@ plugins {
 dependencies {
     api project(':xchange-core')
     api 'com.auth0:java-jwt:3.19.2'
-    testImplementation 'org.mockito:mockito-core:3.12.4'
 }
 
 description = 'XChange Quoine'

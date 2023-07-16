@@ -10,8 +10,6 @@ dependencies {
     api project(':xchange-stream-core')
     api project(':xchange-stream-service-netty')
     api project(':xchange-binance')
-    api 'com.google.guava:guava:32.1.1-jre'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
 }
 
 description = 'XChange Binance Stream'

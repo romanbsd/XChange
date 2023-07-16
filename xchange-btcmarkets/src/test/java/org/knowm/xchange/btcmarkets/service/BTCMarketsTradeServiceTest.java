@@ -23,7 +23,6 @@ import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.trade.LimitOrder;
 import org.knowm.xchange.dto.trade.MarketOrder;
-import org.mockito.Matchers;
 import org.mockito.Mockito;
 import si.mazi.rescu.SynchronizedValueFactory;
 
@@ -230,7 +229,7 @@ public class BTCMarketsTradeServiceTest extends BTCMarketsServiceTest {
             Mockito.eq(SPECIFICATION_API_KEY),
             Mockito.any(SynchronizedValueFactory.class),
             Mockito.any(BTCMarketsDigest.class),
-            Matchers.eq(btcMarketsOrderDetailsRequest)))
+            Mockito.eq(btcMarketsOrderDetailsRequest)))
         .thenReturn(btcMarketsOrders);
     // when
     Collection<Order> orders = btcMarketsTradeService.getOrder("1000");
