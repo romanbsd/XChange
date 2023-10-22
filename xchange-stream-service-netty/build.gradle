@@ -9,7 +9,7 @@ plugins {
 dependencies {
     api project(':xchange-stream-service-core')
     api 'io.netty:netty-all:4.1.96.Final'
-    api 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    api 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
 }
 
 description = 'XChange Core Stream Netty'

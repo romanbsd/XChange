@@ -10,7 +10,7 @@ dependencies {
     api project(':xchange-stream-core')
     api project(':xchange-stream-service-netty')
     api project(':xchange-btcmarkets')
-    api 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    api 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
 }
 
 description = 'XChange BTCMarkets Stream'
