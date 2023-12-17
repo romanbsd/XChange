@@ -7,7 +7,7 @@ plugins {
 }
 
 dependencies {
-    api 'org.knowm.xchart:xchart:3.8.5'
+    api 'org.knowm.xchart:xchart:3.8.6'
     api project(':xchange-core')
     api project(':xchange-openexchangerates')
     api project(':xchange-bibox')
