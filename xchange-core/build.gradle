@@ -6,13 +6,14 @@ plugins {
     id 'org.knowm.xchange.java-conventions'
     id 'java-library'
 }
+def resilienceVersion = '2.2.0'
 
 dependencies {
     api 'com.github.mmazi:rescu:3.0'
     api 'org.apache.commons:commons-lang3:3.14.0'
-    api 'io.github.resilience4j:resilience4j-core:1.7.1'
-    api 'io.github.resilience4j:resilience4j-retry:1.7.1'
-    api 'io.github.resilience4j:resilience4j-ratelimiter:1.7.1'
+    api "io.github.resilience4j:resilience4j-core:$resilienceVersion"
+    api "io.github.resilience4j:resilience4j-retry:$resilienceVersion"
+    api "io.github.resilience4j:resilience4j-ratelimiter:$resilienceVersion"
 }
 
 description = 'XChange Core'
